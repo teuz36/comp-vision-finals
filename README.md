@@ -1,4 +1,4 @@
-cd final code
+cd comp-vision-finals-main
 
 python -m venv venv
 
