@@ -8,9 +8,9 @@ import gradio as gr
 from ultralytics import YOLO
 
 # ---------------- SETTINGS ----------------
-BASE_DIR = Path(__file__).resolve().parent          # the folder this file is in
-MODEL_PATH = BASE_DIR / 'best.pt'                   # best.pt must be in the same folder
-DEFAULT_CONF = 0.657                                # F1-optimal threshold from your curves
+BASE_DIR = Path(__file__).resolve().parent          
+MODEL_PATH = BASE_DIR / 'best.pt'                   
+DEFAULT_CONF = 0.657                                
 VALUES = {'0_01': 0.01, '0_05': 0.05, '0_10': 0.10, '0_25': 0.25, '1': 1, '5': 5, '10': 10, '20': 20}
 RESULTS_DIR = BASE_DIR / 'results'
 RESULTS_DIR.mkdir(exist_ok=True)
@@ -108,7 +108,7 @@ def detect_many(file_list, conf):
 
 # ---------------- THE APP ----------------
 with gr.Blocks(title='Philippine Coin Counter') as app:
-    gr.Markdown('# 🪙 Philippine Coin Counter\n'
+    gr.Markdown('# 🪙 PesoScan\n'
                 'Detects Philippine coins with YOLOv8 and adds up their total value.')
     conf = gr.Slider(0.1, 0.95, value=DEFAULT_CONF, step=0.01,
                      label='Confidence threshold (higher = stricter, lower = finds more coins)')
