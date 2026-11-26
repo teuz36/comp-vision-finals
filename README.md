@@ -1,6 +1,9 @@
 cd final code
+
 python -m venv venv
+
 venv\Scripts\activate
+
 pip install -r requirements.txt
 
 then python app.py
